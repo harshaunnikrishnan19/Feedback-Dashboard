@@ -22,7 +22,7 @@ const FeedbackForm = () => {
     if (isEdit) {
       const fetchSingleFeedback = async () => {
         try {
-          const res = await axios.get(`http://localhost:5000/api/feedbacks/${id}`);
+          const res = await axios.get(`https://feedback-dashboard-ld8w.onrender.com/api/feedbacks/${id}`);
           setFormData({
             courseName: res.data.courseName || '',
             courseDuration: res.data.courseDuration || '4 Weeks',
@@ -52,9 +52,9 @@ const FeedbackForm = () => {
 
     try {
       if (isEdit) {
-        await axios.put(`http://localhost:5000/api/feedbacks/${id}`, formData);
+        await axios.put(`https://feedback-dashboard-ld8w.onrender.com/api/feedbacks/${id}`, formData);
       } else {
-        await axios.post('http://localhost:5000/api/feedbacks', formData);
+        await axios.post('https://feedback-dashboard-ld8w.onrender.com/api/feedbacks', formData);
       }
       navigate('/');
     } catch (err) {

@@ -12,7 +12,7 @@ const Dashboard = () => {
   const fetchFeedbacks = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:5000/api/feedbacks');
+      const res = await axios.get('https://feedback-dashboard-ld8w.onrender.com/api/feedbacks');
       setFeedbacks(res.data);
       setError('');
     } catch (err) {
@@ -32,7 +32,7 @@ const Dashboard = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/feedbacks/${id}`);
+      await axios.delete(`https://feedback-dashboard-ld8w.onrender.com/api/feedbacks/${id}`);
       // Filter out deleted feedback from current state
       setFeedbacks(feedbacks.filter((item) => item._id !== id));
     } catch (err) {
